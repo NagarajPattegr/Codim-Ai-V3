@@ -33,16 +33,16 @@ const StickyBar: React.FC<StickyBarProps> = ({ onBookDemo }) => {
       <button
         type="button"
         onClick={onBookDemo}
-        className="pointer-events-auto bg-wispr-dark/80 backdrop-blur-2xl text-white px-8 py-4 rounded-[2rem] flex items-center gap-6 shadow-[0_30px_70px_rgba(0,0,0,0.4)] hover:scale-105 hover:bg-wispr-dark transition-all duration-300 border border-white/10 active:scale-95 group"
+        className="pointer-events-auto bg-wispr-dark/80 backdrop-blur-2xl text-white px-5 sm:px-8 py-3 sm:py-4 rounded-[2rem] flex items-center gap-3 sm:gap-6 shadow-[0_30px_70px_rgba(0,0,0,0.4)] hover:scale-105 hover:bg-wispr-dark transition-all duration-300 border border-white/10 active:scale-95 group"
       >
-        <div className="w-12 h-12 bg-wispr-purple rounded-[1rem] flex items-center justify-center text-wispr-dark shadow-2xl transition-transform group-hover:rotate-12">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-wispr-purple rounded-[1rem] flex items-center justify-center text-wispr-dark shadow-2xl transition-transform group-hover:rotate-12">
           <Calendar size={20} strokeWidth={3} />
         </div>
         <div className="flex flex-col items-center leading-tight">
-          <span className="font-brand font-black text-sm tracking-tight text-center">CodimAI Labs</span>
-          <span className="font-brand text-[9px] opacity-40 uppercase tracking-[0.3em] mt-1 text-center">Free Pipeline Audit</span>
+          <span className="font-brand font-black text-[11px] sm:text-sm tracking-tight text-center">CodimAI Labs</span>
+          <span className="font-brand text-[8px] sm:text-[9px] opacity-40 uppercase tracking-[0.3em] mt-1 text-center">Free Pipeline Audit</span>
         </div>
-        <div className="w-[1.5px] h-6 bg-white/10"></div>
+        <div className="w-[1.5px] h-6 bg-white/10 mx-1 sm:mx-0"></div>
         <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform opacity-60 group-hover:opacity-100" />
       </button>
     </div>

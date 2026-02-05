@@ -3,10 +3,12 @@ import Home from './pages/Home';
 import OurTech from './pages/OurTech';
 import Article from './pages/Article';
 import PricingPage from './pages/PricingPage';
+import ScrollToTop from '../components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tech" element={<OurTech />} />

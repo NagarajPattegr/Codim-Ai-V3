@@ -49,8 +49,8 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
         switch (variant) {
             case 'hubspot':
                 return (
-                    <div className="relative z-10 flex flex-col items-center gap-12">
-                        <div className="w-[420px] h-[220px] bg-white/90 backdrop-blur-2xl rounded-[3.5rem] p-12 shadow-[0_50px_120px_rgba(0,0,0,0.1)] border border-white flex items-center justify-between relative group/card transition-transform duration-700 hover:scale-105">
+                    <div className="relative z-10 flex flex-col items-center gap-12 w-full max-w-[420px]">
+                        <div className="w-full h-[220px] bg-white/90 backdrop-blur-2xl rounded-[3.5rem] p-12 shadow-[0_50px_120px_rgba(0,0,0,0.1)] border border-white flex items-center justify-between relative group/card transition-transform duration-700 hover:scale-105">
                             <div className="w-24 h-24 bg-wispr-purple/10 rounded-[2rem] flex items-center justify-center text-wispr-purple shadow-inner">
                                 <Cpu size={48} strokeWidth={2.5} />
                             </div>
@@ -76,9 +76,9 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
 
             case 'clay':
                 return (
-                    <div className="relative z-10 flex flex-col items-center gap-4 group/clay transform hover:scale-105 transition-transform duration-700">
+                    <div className="relative z-10 flex flex-col items-center gap-4 group/clay transform hover:scale-105 transition-transform duration-700 w-full max-w-[480px]">
                         {/* Browser Mockup - Matches Screenshot */}
-                        <div className="w-[480px] bg-white/60 backdrop-blur-xl rounded-[3rem] shadow-[0_60px_120px_rgba(0,0,0,0.1)] border border-white/80 overflow-hidden">
+                        <div className="w-full bg-white/60 backdrop-blur-xl rounded-[3rem] shadow-[0_60px_120px_rgba(0,0,0,0.1)] border border-white/80 overflow-hidden">
                             {/* Window Controls */}
                             <div className="px-10 py-5 flex gap-2 border-b border-slate-100/50 bg-slate-50/30">
                                 <div className="w-3 h-3 rounded-full bg-slate-200"></div>
@@ -122,8 +122,8 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
 
             case 'brevo':
                 return (
-                    <div className="relative z-10 flex flex-col items-center gap-8">
-                        <div className="w-[400px] bg-white rounded-[3rem] p-10 shadow-2xl border border-slate-100">
+                    <div className="relative z-10 flex flex-col items-center gap-8 w-full max-w-[400px]">
+                        <div className="w-full bg-white rounded-[3rem] p-10 shadow-2xl border border-slate-100">
                             <div className="flex items-center gap-5 mb-10 pb-6 border-b border-slate-50">
                                 <div className="w-12 h-12 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center"><Mail size={24} /></div>
                                 <div className="flex-1 h-3 bg-slate-100 rounded-full"></div>
@@ -144,7 +144,7 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
 
             case 'gamma':
                 return (
-                    <div className="relative z-10 grid grid-cols-2 gap-6 w-[440px]">
+                    <div className="relative z-10 grid grid-cols-2 gap-6 w-full max-w-[440px]">
                         {[1, 2, 3].map(i => (
                             <div key={i} className={`aspect-[4/3] bg-white rounded-[2rem] border border-slate-100 shadow-xl p-6 transition-all duration-1000 ${activeStep === i - 1 ? 'scale-110 -translate-y-4 ring-4 ring-fuchsia-100 z-20' : 'opacity-40 grayscale'}`}>
                                 <div className="w-10 h-10 bg-fuchsia-50 text-fuchsia-500 rounded-lg mb-4 flex items-center justify-center"><Layout size={20} /></div>
@@ -159,7 +159,7 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
 
             case 'airtable':
                 return (
-                    <div className="relative z-10 flex gap-6 w-[480px]">
+                    <div className="relative z-10 flex gap-6 w-full max-w-[480px]">
                         {[1, 2, 3].map(col => (
                             <div key={col} className="flex-1 space-y-4">
                                 <div className="h-1.5 w-full bg-slate-100 rounded-full mb-6"></div>
@@ -179,7 +179,7 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
 
             case 'notion':
                 return (
-                    <div className="relative z-10 w-[380px] bg-white rounded-[2.5rem] p-10 shadow-2xl border border-slate-100">
+                    <div className="relative z-10 w-full max-w-[380px] bg-white rounded-[2.5rem] p-10 shadow-2xl border border-slate-100">
                         <div className="flex items-center gap-4 mb-10 pb-6 border-b">
                             <div className="w-12 h-12 bg-slate-50 text-slate-800 rounded-xl flex items-center justify-center font-black">N</div>
                             <div className="h-4 w-32 bg-slate-100 rounded-full"></div>
@@ -200,7 +200,7 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
             case 'tally':
                 return (
                     <div className="relative z-10 flex flex-col items-center gap-10">
-                        <div className="bg-white p-12 rounded-[3.5rem] shadow-2xl border border-slate-100 w-[400px] text-center">
+                        <div className="bg-white p-12 rounded-[3.5rem] shadow-2xl border border-slate-100 w-full max-w-[400px] text-center">
                             <div className="flex justify-center gap-3 mb-8">
                                 {[1, 2, 3, 4, 5].map(i => (
                                     <Star key={i} size={32} className={`transition-all duration-500 ${activeStep >= i - 1 ? 'text-yellow-400 fill-yellow-400 scale-125' : 'text-slate-100'}`} />
@@ -221,7 +221,7 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
             case 'calendly':
                 return (
                     <div className="relative z-10 flex flex-col items-center gap-6">
-                        <div className="w-[380px] bg-white/90 backdrop-blur-2xl rounded-[3rem] p-8 border border-white shadow-[0_40px_100px_rgba(0,0,0,0.08)] flex items-center justify-between animate-fade-in-up">
+                        <div className="w-full max-w-[380px] bg-white/90 backdrop-blur-2xl rounded-[3rem] p-8 border border-white shadow-[0_40px_100px_rgba(0,0,0,0.08)] flex items-center justify-between animate-fade-in-up">
                             <div className="flex items-center gap-6">
                                 <div className="w-16 h-16 bg-wispr-purple/10 rounded-2xl flex items-center justify-center text-wispr-purple">
                                     <Calendar size={28} />
@@ -238,7 +238,7 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
                                 <ShieldCheck size={20} className="text-slate-200" />
                             </div>
                         </div>
-                        <div className="flex gap-6 w-full max-w-[380px]">
+                        <div className="flex gap-4 sm:gap-6 w-full max-w-[380px]">
                             <div className="flex-1 bg-white/90 backdrop-blur-2xl rounded-[2.5rem] p-7 border border-white shadow-xl flex flex-col items-start gap-4 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
                                 <div className="flex items-center gap-3">
                                     <div className="w-10 h-10 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center"><CheckCircle2 size={20} /></div>
@@ -262,7 +262,7 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
             case 'stripe':
                 return (
                     <div className="relative z-10 flex flex-col items-center gap-6">
-                        <div className={`w-[360px] ${isDark ? 'bg-white/10' : 'bg-white'} rounded-[3rem] p-10 border border-white/20 shadow-2xl relative overflow-hidden`}>
+                        <div className={`w-full max-w-[360px] ${isDark ? 'bg-white/10' : 'bg-white'} rounded-[3rem] p-10 border border-white/20 shadow-2xl relative overflow-hidden`}>
                             <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-400/10 blur-3xl rounded-full"></div>
                             <div className="flex justify-between items-start mb-12">
                                 <div className="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-500">
@@ -290,7 +290,7 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
             case 'apollo':
                 return (
                     <div className="relative z-10 flex flex-col items-center justify-center">
-                        <div className="w-[400px] h-[400px] rounded-full border border-wispr-purple/10 flex items-center justify-center relative">
+                        <div className="w-full max-w-[400px] aspect-square rounded-full border border-wispr-purple/10 flex items-center justify-center relative">
                             <div className="absolute inset-0 animate-[spin_10s_linear_infinite]">
                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-1/2 bg-gradient-to-t from-wispr-purple to-transparent"></div>
                             </div>
@@ -317,7 +317,7 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
             case 'geo':
                 return (
                     <div className="relative z-10 flex flex-col items-center gap-8">
-                        <div className="grid grid-cols-2 gap-4 w-[400px]">
+                        <div className="grid grid-cols-2 gap-4 w-full max-w-[400px]">
                             {[1, 2, 3, 4].map(i => (
                                 <div key={i} className={`p-6 rounded-[2rem] border transition-all duration-700 ${activeStep === i - 1 ? 'bg-wispr-purple text-white scale-105 shadow-2xl' : 'bg-white/80 border-white text-slate-400 opacity-60'}`}>
                                     <div className="flex items-center gap-3 mb-4">
@@ -360,7 +360,7 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
 
             case 'hub':
                 return (
-                    <div className="relative z-10 flex items-center justify-center w-[400px] h-[400px]">
+                    <div className="relative z-10 flex items-center justify-center w-full max-w-[400px] aspect-square">
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="w-[300px] h-[300px] rounded-full border-2 border-dashed border-wispr-purple/20 animate-[spin_20s_linear_infinite]"></div>
                         </div>
