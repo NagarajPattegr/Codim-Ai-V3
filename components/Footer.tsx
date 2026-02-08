@@ -62,7 +62,7 @@ const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
                                     Mumbai, Maharashtra,<br />
                                     India
                                 </p>
-                                <p className="font-sodo font-bold text-wispr-purple text-sm pt-2"> <a href="mailto:Support@codimai.com">Support@codimai.com</a></p>
+                                <p className="font-sodo font-bold text-wispr-purple text-sm pt-2"> <a href="mailto:Support@codimai.com" className="break-all">Support@codimai.com</a></p>
                             </div>
                         </div>
                     </div>

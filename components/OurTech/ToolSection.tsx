@@ -101,13 +101,13 @@ const ToolSection: React.FC<ToolSectionProps> = ({ tool, index, forceTheme, onBo
                     <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`} style={{ transitionDelay: '1200ms' }}>
                         <button
                             onClick={onBookDemo}
-                            className={`px-14 py-9 rounded-[3rem] font-black font-brand text-[13px] uppercase tracking-[0.4em] transition-all flex items-center gap-8 group active:scale-95 shadow-2xl relative overflow-hidden ${currentTheme === 'dark'
+                            className={`px-8 md:px-14 py-5 md:py-9 rounded-2xl md:rounded-[3rem] font-black font-brand text-[11px] md:text-[13px] uppercase tracking-[0.3em] md:tracking-[0.4em] transition-all flex items-center justify-center lg:justify-start gap-4 md:gap-8 group active:scale-95 shadow-2xl relative overflow-hidden w-full sm:w-auto ${currentTheme === 'dark'
                                 ? 'bg-white text-[#161616] hover:bg-[#8B5CF6]'
                                 : 'bg-[#161616] text-white hover:bg-black'
                                 }`}>
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[1500ms]"></div>
                             <span>Explore {tool.name} Architecture</span>
-                            <ArrowRight size={24} className="group-hover:translate-x-4 transition-transform" />
+                            <ArrowRight size={20} className="md:w-6 md:h-6 group-hover:translate-x-4 transition-transform" />
                         </button>
                     </div>
                 </div>

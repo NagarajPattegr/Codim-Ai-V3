@@ -8,6 +8,8 @@ import BlogPostComponent from '../../components/Articles/BlogPost';
 import { BLOG_POSTS } from '../../components/Articles/data';
 import type { BlogPost } from '../../types';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import PrivacyPolicyModal from '../../components/PrivacyPolicyModal';
+import TermsConditionsModal from '../../components/TermsConditionsModal';
 
 const Article: React.FC = () => {
     const [isBookModalOpen, setIsBookModalOpen] = useState(false);
@@ -15,8 +17,17 @@ const Article: React.FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const navigate = useNavigate();
 
+    const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+    const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+
     const openBookModal = () => setIsBookModalOpen(true);
     const closeBookModal = () => setIsBookModalOpen(false);
+
+    const openPrivacyModal = () => setIsPrivacyModalOpen(true);
+    const closePrivacyModal = () => setIsPrivacyModalOpen(false);
+
+    const openTermsModal = () => setIsTermsModalOpen(true);
+    const closeTermsModal = () => setIsTermsModalOpen(false);
 
     useEffect(() => {
         const slug = searchParams.get('p');
@@ -48,7 +59,7 @@ const Article: React.FC = () => {
         <div className="min-h-screen bg-wispr-cream selection:bg-wispr-purple selection:text-white flex flex-col">
             <Navbar onBookDemo={openBookModal} />
 
-            <main className="flex-grow pt-20">
+            <main className="flex-grow pt-28">
                 {selectedPost ? (
                     <BlogPostComponent
                         post={selectedPost}
@@ -65,10 +76,12 @@ const Article: React.FC = () => {
             </main>
 
             <div id="contact">
-                <Footer />
+                <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />
             </div>
             <StickyBar onBookDemo={openBookModal} />
             <BookDemoModal open={isBookModalOpen} onClose={closeBookModal} />
+            <PrivacyPolicyModal open={isPrivacyModalOpen} onClose={closePrivacyModal} />
+            <TermsConditionsModal open={isTermsModalOpen} onClose={closeTermsModal} />
         </div>
     );
 };

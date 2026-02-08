@@ -98,11 +98,12 @@ const TermsConditionsModal: React.FC<TermsConditionsModalProps> = ({ open, onClo
                 aria-modal="true"
                 aria-labelledby={ids.title}
                 aria-describedby={ids.desc}
-                className="relative w-full max-w-4xl my-auto rounded-[3rem] overflow-hidden shadow-[0_80px_160px_rgba(0,0,0,0.5)] border border-white/10 max-h-[90vh] flex flex-col bg-white"
+                className="relative w-full max-w-4xl my-auto rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_80px_160px_rgba(0,0,0,0.5)] border border-white/10 max-h-[90vh] flex flex-col bg-white"
             >
                 {/* Header */}
-                <div className="flex items-start justify-between gap-6 p-8 md:p-10 border-b border-slate-100 flex-shrink-0 bg-white relative z-10">
-                    <div>
+                {/* Header */}
+                <div className="flex items-start justify-between gap-4 p-7 md:p-10 border-b border-slate-100 flex-shrink-0 bg-white relative z-10">
+                    <div className="flex-1">
                         <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-wispr-dark text-wispr-cream border border-white/5 shadow-xl">
                             <Scale size={14} className="text-wispr-purple" />
                             <span className="font-brand text-[10px] font-black uppercase tracking-[0.4em]">
@@ -124,10 +125,10 @@ const TermsConditionsModal: React.FC<TermsConditionsModalProps> = ({ open, onClo
                     <button
                         type="button"
                         onClick={onClose}
-                        className="w-12 h-12 rounded-xl bg-wispr-dark text-white flex items-center justify-center shadow-xl border border-white/10 hover:bg-black transition-colors active:scale-95 cursor-pointer flex-shrink-0"
+                        className="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition-all active:scale-90 cursor-pointer z-[60]"
                         aria-label="Close"
                     >
-                        <X size={18} strokeWidth={3} />
+                        <X size={20} strokeWidth={2.5} />
                     </button>
                 </div>
 
@@ -260,7 +261,7 @@ const TermsConditionsModal: React.FC<TermsConditionsModalProps> = ({ open, onClo
                             <div className="bg-wispr-dark text-white p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-wispr-purple/10 blur-3xl -z-10 group-hover:bg-wispr-purple/20 transition-all" />
                                 <div className="space-y-4 relative z-10">
-                                    <p className="flex items-center gap-3"><Mail className="text-wispr-purple" size={18} /> <strong>Email:</strong> legal@codimai.com, support@codimai.com</p>
+                                    <p className="flex items-center gap-3"><Mail className="text-wispr-purple" size={18} /> <strong>Email:</strong> <span className="break-all">legal@codimai.com, support@codimai.com</span></p>
                                     <div className="flex flex-col">
                                         <div className="flex items-start gap-3">
                                             <MapPin className="text-wispr-purple mt-1" size={18} />

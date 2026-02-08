@@ -30,7 +30,7 @@ const PrivacyPolicy: React.FC = () => {
                         <ul className="space-y-3 list-none pl-0">
                             <li><strong className="text-black">Company name:</strong> CodimAi</li>
                             <li><strong className="text-black">Registered address:</strong> PLT NO NANOTECHNOLOY CENTRE CTS NO 4094 G-Block, BKC, Bandra (E), Mumbai City – 400055, Maharashtra, India</li>
-                            <li><strong className="text-black">Email:</strong> privacy@codimai.com, support@codimai.com</li>
+                            <li><strong className="text-black">Email:</strong> <span className="break-all">privacy@codimai.com, support@codimai.com</span></li>
                             <li><strong className="text-black">Phone:</strong> +91 83696 93412</li>
                         </ul>
                         <p>
@@ -190,11 +190,11 @@ const PrivacyPolicy: React.FC = () => {
                     <section className="space-y-6">
                         <h3 className="text-2xl font-lander font-bold text-black">13. Contact Us</h3>
                         <div className="bg-slate-900 text-white p-8 rounded-[2rem] space-y-4">
-                            <p><strong>Email:</strong> privacy@codimai.com</p>
+                            <p className="flex flex-wrap gap-2"><strong>Email:</strong> <span className="break-all">privacy@codimai.com</span></p>
                             <div className="flex flex-col">
                                 <strong>Address:</strong>
                                 <span>CodimAi – Privacy Office</span>
-                                <span>PLT NO NANOTECHNOLOY CENTRE CTS NO 4094 G-Block, BKC, Bandra (E), Mumbai – 400055, Maharashtra, India</span>
+                                <span className="break-words">PLT NO NANOTECHNOLOY CENTRE CTS NO 4094 G-Block, BKC, Bandra (E), Mumbai – 400055, Maharashtra, India</span>
                             </div>
                         </div>
                     </section>

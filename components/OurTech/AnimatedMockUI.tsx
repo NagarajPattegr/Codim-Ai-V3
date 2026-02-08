@@ -411,7 +411,9 @@ const AnimatedMockUI: React.FC<AnimatedMockUIProps> = ({ toolName, className = "
                 } ${activeStep % 2 === 0 ? 'scale-110' : 'scale-90'}`}></div>
 
             {/* Visual content based on variant */}
-            {renderContent()}
+            <div className="w-full flex justify-center transition-transform duration-700">
+                {renderContent()}
+            </div>
 
             {/* Floating Sparkles for extra polish */}
             <div className="absolute top-10 right-10 w-24 h-24 bg-white/30 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center shadow-lg animate-float-slow opacity-60">

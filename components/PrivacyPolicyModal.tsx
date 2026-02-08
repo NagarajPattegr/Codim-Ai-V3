@@ -98,11 +98,11 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ open, onClose }
                 aria-modal="true"
                 aria-labelledby={ids.title}
                 aria-describedby={ids.desc}
-                className="relative w-full max-w-4xl my-auto rounded-[3rem] overflow-hidden shadow-[0_80px_160px_rgba(0,0,0,0.5)] border border-white/10 max-h-[90vh] flex flex-col bg-white"
+                className="relative w-full max-w-4xl my-auto rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_80px_160px_rgba(0,0,0,0.5)] border border-white/10 max-h-[90vh] flex flex-col bg-white"
             >
                 {/* Header */}
-                <div className="flex items-start justify-between gap-6 p-8 md:p-10 border-b border-slate-100 flex-shrink-0 bg-white relative z-10">
-                    <div>
+                <div className="flex items-start justify-between gap-4 p-7 md:p-10 border-b border-slate-100 flex-shrink-0 bg-white relative z-10">
+                    <div className="flex-1">
                         <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-wispr-dark text-wispr-cream border border-white/5 shadow-xl">
                             <ShieldCheck size={14} className="text-wispr-purple" />
                             <span className="font-brand text-[10px] font-black uppercase tracking-[0.4em]">
@@ -124,10 +124,10 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ open, onClose }
                     <button
                         type="button"
                         onClick={onClose}
-                        className="w-12 h-12 rounded-xl bg-wispr-dark text-white flex items-center justify-center shadow-xl border border-white/10 hover:bg-black transition-colors active:scale-95 cursor-pointer flex-shrink-0"
+                        className="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition-all active:scale-90 cursor-pointer z-[60]"
                         aria-label="Close"
                     >
-                        <X size={18} strokeWidth={3} />
+                        <X size={20} strokeWidth={2.5} />
                     </button>
                 </div>
 
@@ -157,7 +157,7 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ open, onClose }
                                         <ul className="space-y-4 list-none pl-0">
                                             <li className="flex items-center gap-4"><div className="w-2 h-2 rounded-full bg-wispr-purple" /> <span className="font-bold text-wispr-dark">Company name:</span> CodimAi</li>
                                             <li className="flex items-start gap-4"><MapPin className="text-wispr-purple shrink-0 mt-1" size={18} /> <span><strong className="text-wispr-dark">Registered address:</strong> PLT NO NANOTECHNOLOY CENTRE CTS NO 4094 G-Block, BKC, Bandra (E), Mumbai City – 400055, Maharashtra, India</span></li>
-                                            <li className="flex items-center gap-4"><Mail className="text-wispr-purple shrink-0" size={18} /> <span><strong className="text-wispr-dark">Email:</strong> privacy@codimai.com, support@codimai.com</span></li>
+                                            <li className="flex items-center gap-4"><Mail className="text-wispr-purple shrink-0" size={18} /> <span className="break-all text-sm md:text-base"><strong className="text-wispr-dark">Email:</strong> privacy@codimai.com, support@codimai.com</span></li>
                                         </ul>
                                         <p>CodimAi provides AI-based automation solutions including WhatsApp automation, chatbots, and workflow automation.</p>
                                     </div>
@@ -231,7 +231,7 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ open, onClose }
                                             <li>Withdraw consent</li>
                                         </ul>
                                         <div className="p-6 bg-purple-50 rounded-[2rem] border border-purple-100 text-wispr-dark font-bold text-center">
-                                            Contact <a href="mailto:privacy@codimai.com" className="text-wispr-purple underline underline-offset-4">privacy@codimai.com</a> to exercise your rights.
+                                            Contact <a href="mailto:privacy@codimai.com" className="text-wispr-purple underline underline-offset-4 break-all">privacy@codimai.com</a> to exercise your rights.
                                         </div>
                                     </div>
                                 )
@@ -251,14 +251,14 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ open, onClose }
                             <div className="bg-wispr-dark text-white p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-wispr-purple/10 blur-3xl -z-10 group-hover:bg-wispr-purple/20 transition-all" />
                                 <div className="space-y-4 relative z-10">
-                                    <p className="flex items-center gap-3"><Mail className="text-wispr-purple" size={18} /> <strong>Email:</strong> privacy@codimai.com</p>
+                                    <p className="flex flex-wrap gap-x-3 gap-y-1"><span className="flex items-center gap-3"><Mail className="text-wispr-purple" size={18} /> <strong>Email:</strong></span> <span className="break-all opacity-70">privacy@codimai.com</span></p>
                                     <div className="flex flex-col">
                                         <div className="flex items-start gap-3">
                                             <MapPin className="text-wispr-purple mt-1" size={18} />
                                             <div className="flex flex-col">
                                                 <strong>Address:</strong>
                                                 <span className="opacity-70">CodimAi – Privacy Office</span>
-                                                <span className="opacity-70">PLT NO NANOTECHNOLOY CENTRE CTS NO 4094 G-Block, BKC, Bandra (E), Mumbai – 400055, Maharashtra, India</span>
+                                                <span className="opacity-70 text-sm md:text-base break-words">PLT NO NANOTECHNOLOY CENTRE CTS NO 4094 G-Block, BKC, Bandra (E), Mumbai – 400055, Maharashtra, India</span>
                                             </div>
                                         </div>
                                     </div>

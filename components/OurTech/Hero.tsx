@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section id="workflow" className="py-16 md:py-20 px-6 bg-white flex flex-col items-center relative overflow-hidden">
+    <section id="workflow" className="pt-32 pb-16 md:pt-40 md:pb-20 px-6 bg-white flex flex-col items-center relative overflow-hidden">
       {/* Dynamic Background Path */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] select-none">
         <svg className="w-full h-full" viewBox="0 0 1440 1000" preserveAspectRatio="none">

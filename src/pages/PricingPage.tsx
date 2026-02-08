@@ -4,12 +4,23 @@ import Footer from '../../components/Footer';
 import StickyBar from '../../components/StickyBar';
 import Pricing from '../../components/Pricing';
 import BookDemoModal from '../../components/BookDemoModal';
+import PrivacyPolicyModal from '../../components/PrivacyPolicyModal';
+import TermsConditionsModal from '../../components/TermsConditionsModal';
 
 const PricingPage: React.FC = () => {
     const [isBookModalOpen, setIsBookModalOpen] = useState(false);
 
+    const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+    const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+
     const openBookModal = () => setIsBookModalOpen(true);
     const closeBookModal = () => setIsBookModalOpen(false);
+
+    const openPrivacyModal = () => setIsPrivacyModalOpen(true);
+    const closePrivacyModal = () => setIsPrivacyModalOpen(false);
+
+    const openTermsModal = () => setIsTermsModalOpen(true);
+    const closeTermsModal = () => setIsTermsModalOpen(false);
 
 
 
@@ -17,7 +28,7 @@ const PricingPage: React.FC = () => {
         <div className="min-h-screen bg-wispr-cream selection:bg-wispr-purple selection:text-white flex flex-col">
             <Navbar onBookDemo={openBookModal} />
 
-            <main className="flex-grow">
+            <main className="flex-grow pt-28">
                 {/* We use the existing Pricing component but wrapped in a page layout */}
                 <Pricing theme="light" onBookDemo={openBookModal} />
 
@@ -39,10 +50,12 @@ const PricingPage: React.FC = () => {
             </main>
 
             <div id="contact">
-                <Footer />
+                <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />
             </div>
             <StickyBar onBookDemo={openBookModal} />
             <BookDemoModal open={isBookModalOpen} onClose={closeBookModal} />
+            <PrivacyPolicyModal open={isPrivacyModalOpen} onClose={closePrivacyModal} />
+            <TermsConditionsModal open={isTermsModalOpen} onClose={closeTermsModal} />
         </div>
     );
 };
