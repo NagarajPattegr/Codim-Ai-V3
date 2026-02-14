@@ -1,220 +1,106 @@
-import {
-  Zap,
-  Search,
-  UserPlus,
-  Mail,
-  Calendar,
-  FileText,
-  Kanban,
-  CreditCard,
-  CheckCircle2,
-  MessageSquare,
-  TrendingUp,
-  BarChart3,
-  Share2
-} from 'lucide-react';
-import type { SalesTool } from './types';
+import React from 'react';
+import { Search, Brain, Share2, Target, Zap, ShieldCheck } from 'lucide-react';
+import type { ServiceDetail, BlogPost } from './types';
 
-export const TOOLS: SalesTool[] = [
+export const COMPANY_NAME = "CodimAI";
+export const NAP = {
+  address: "123 AI Strategy Way, Suite 500, Palo Alto, CA 94301",
+  phone: "+1 (650) 555-0198",
+  email: "hello@codimai.com"
+};
+export const THEMES = [
+  { id: 'slate', color: '#64748b', bg: 'radial-gradient(circle at 50% -20%, #1e293b 0%, #000 100%)' },
+  { id: 'cyan', color: '#22d3ee', bg: 'radial-gradient(circle at 50% -20%, #083344 0%, #000 100%)' },
+  { id: 'indigo', color: '#818cf8', bg: 'radial-gradient(circle at 50% -20%, #1e1b4b 0%, #000 100%)' }
+];
+
+export const CLIENT_BRANDS = ["ChatGPT", "Perplexity", "Gemini", "Claude", "SearchGPT", "Meta AI"];
+
+export const SERVICES: ServiceDetail[] = [
   {
-    id: 'geo',
-    name: 'GEO',
-    title: 'Generative Engine Optimization (GEO)',
-    hook: 'Optimize your business to appear inside AI tools like ChatGPT, Claude, and Gemini.',
-    benefits: [
-      'AI-optimized website structure and content for organic inbound leads.',
-      'Comparison pages and schema markup to rank in AI answers.',
-      'Drive qualified traffic without ads.'
+    id: "geo",
+    title: "Generative Engine Optimization (GEO) Services",
+    slug: "geo-services",
+    description: "Future-proof your brand visibility in AI answer engines like ChatGPT, Claude, and Perplexity.",
+    longDescription: "Generative Engine Optimization (GEO) is the practice of optimizing content, entities, and digital presence for discovery in AI-powered answer engines like ChatGPT, Perplexity, and Google AI Overviews. CodimAI provides a specialized GEO methodology that bridges the gap between traditional search and AI discovery.",
+    sections: [
+      {
+        heading: "What is Generative Engine Optimization?",
+        content: "Generative Engine Optimization (GEO) is the technical and strategic process of ensuring your brand is the primary source cited by Large Language Models (LLMs) when generating answers for users. Unlike traditional SEO, which focuses on rank, CodimAI's GEO focuses on citation probability and entity relationship strength.",
+        bullets: [
+          "Entity mapping for AI knowledge graphs",
+          "Citation authority building",
+          "Contextual relevance optimization",
+          "AI-friendly content restructuring"
+        ]
+      },
+      {
+        heading: "Why does your brand need a GEO strategy?",
+        content: "As user behavior shifts from scrolling through search results to receiving direct AI answers, brands that lack a GEO strategy face digital invisibility. CodimAI helps you capture the 'zero-click' audience that relies on AI assistants for decision-making.",
+        bullets: [
+          "Capture traffic from ChatGPT and Perplexity",
+          "Establish authority in Google AI Overviews",
+          "Protect brand reputation in AI-generated summaries",
+          "Drive high-intent leads through conversational discovery"
+        ]
+      }
     ],
-    iconName: 'Zap',
-    ctaText: 'Integrated seamlessly',
-    category: 'Visibility'
-  },
-  {
-    id: 'apollo',
-    name: 'Apollo',
-    title: 'Lead Generation - Apollo',
-    hook: 'Find highly specific customer profiles using filters like role, industry, company size, and funding.',
-    benefits: [
-      'Build precise, qualified lead lists fast.',
-      'Targeted outreach at scale.',
-      'Filters for perfect-fit prospects.'
-    ],
-    iconName: 'Search',
-    ctaText: 'Integrated seamlessly',
-    category: 'Prospecting'
-  },
-  {
-    id: 'clay',
-    name: 'Clay',
-    title: 'Lead Enrichment - Clay',
-    hook: 'Enrich your lead list with verified emails, social profiles, and real-time activity signals.',
-    benefits: [
-      'Personalized outreach data in one click.',
-      'Verified contacts + signals.',
-      'Company intel for better pitches.'
-    ],
-    iconName: 'UserPlus',
-    ctaText: 'Integrated seamlessly',
-    category: 'Prospecting'
-  },
-  {
-    id: 'brevo',
-    name: 'Brevo',
-    title: 'Lead Nurturing - Brevo',
-    hook: 'Set up automated sequences to follow up, nurture prospects, and score leads.',
-    benefits: [
-      'Automated follow-ups until ready.',
-      'Lead scoring + engagement tracking.',
-      'Higher response rates.'
-    ],
-    iconName: 'Mail',
-    ctaText: 'Integrated seamlessly',
-    category: 'Engagement'
-  },
-  {
-    id: 'calendly',
-    name: 'Calendly',
-    title: 'Meeting Scheduling - Calendly',
-    hook: 'Eliminate back-and-forth. Prospects instantly book a meeting slot.',
-    benefits: [
-      'Fast bookings, higher conversions.',
-      'No email chains.',
-      'Instant response time boost.'
-    ],
-    iconName: 'Calendar',
-    ctaText: 'Integrated seamlessly',
-    category: 'Engagement'
-  },
-  {
-    id: 'gamma',
-    name: 'Gamma',
-    title: 'Proposal Creation - Gamma',
-    hook: 'Generate clean, visually appealing proposals or pitch decks rapidly from notes.',
-    benefits: [
-      'Quick, pro pitches.',
-      'From idea to deck in minutes.',
-      'Client-ready visuals.'
-    ],
-    iconName: 'FileText',
-    ctaText: 'Integrated seamlessly',
-    category: 'Closing'
-  },
-  {
-    id: 'airtable',
-    name: 'Airtable',
-    title: 'Deal Management - Airtable',
-    hook: 'Track stages, values, and next actions to prevent deals from being lost.',
-    benefits: [
-      'Visual pipeline visibility.',
-      'No deals slip through.',
-      'Custom stages + actions.'
-    ],
-    iconName: 'Kanban',
-    ctaText: 'Integrated seamlessly',
-    category: 'Closing'
-  },
-  {
-    id: 'stripe',
-    name: 'Stripe',
-    title: 'Payment Collection - Stripe',
-    hook: 'Accept global payments with cards, subscriptions, and automated billing.',
-    benefits: [
-      'Frictionless global collections.',
-      'Cards, UPI, subs ready.',
-      'Automated invoicing.'
-    ],
-    iconName: 'CreditCard',
-    ctaText: 'Integrated seamlessly',
-    category: 'Revenue'
-  },
-  {
-    id: 'notion',
-    name: 'Notion',
-    title: 'Delivery Tracking',
-    hook: 'Use Notion or custom dashboards to track project progress and client updates.',
-    benefits: [
-      'Real-time project sync.',
-      'Deadlines + deliverables visible.',
-      'Client update hub.'
-    ],
-    iconName: 'CheckCircle2',
-    ctaText: 'Integrated seamlessly',
-    category: 'Operations'
-  },
-  {
-    id: 'tally',
-    name: 'Tally',
-    title: 'Feedback System',
-    hook: 'Collect reviews and insights using tools like Tally or Typeform.',
-    benefits: [
-      'Capture testimonials + improvements.',
-      'Satisfaction scores.',
-      'Actionable insights.'
-    ],
-    iconName: 'MessageSquare',
-    ctaText: 'Integrated seamlessly',
-    category: 'Retention'
-  },
-  {
-    id: 'hubspot',
-    name: 'HubSpot',
-    title: 'Upsell & Retention',
-    hook: 'Automate renewals, upsells, and cross-sells to lower churn.',
-    benefits: [
-      'Automated revenue growth.',
-      'Renewals + upsells.',
-      'Lower churn rate.'
-    ],
-    iconName: 'TrendingUp',
-    ctaText: 'Integrated seamlessly',
-    category: 'Retention'
-  },
-  {
-    id: 'analytics',
-    name: 'Analytics Dashboard',
-    title: 'Full-Funnel Analytics',
-    hook: 'Track leads, conversions, revenue, CAC, and LTV in one place.',
-    benefits: [
-      'Full-funnel metrics.',
-      'CAC, LTV, churn insights.',
-      'Campaign ROI tracking.'
-    ],
-    iconName: 'BarChart3',
-    ctaText: 'Integrated seamlessly',
-    category: 'Insights'
-  },
-  {
-    id: 'automation',
-    name: 'The Hub',
-    title: 'Total System Automation',
-    hook: 'Businesses break because apps don’t talk. We connect the entire hub.',
-    benefits: [
-      'One connected hub.',
-      'End siloed tools.',
-      'Scale without chaos.'
-    ],
-    iconName: 'Share2',
-    ctaText: 'Get started now',
-    category: 'Unified'
+    faqs: [
+      {
+        question: "How long does GEO take to show results?",
+        answer: "CodimAI typically observes visibility shifts in AI answer engines within 60 to 90 days. Because AI models rely on periodically updated indices and RAG (Retrieval-Augmented Generation), the timeline depends on the crawl frequency of the specific generative engine."
+      },
+      {
+        question: "What is the ROI of AI search optimization?",
+        answer: "The ROI of AI search optimization by CodimAI is measured through 'share of voice' in AI answers. Our clients see increased high-intent conversions as their brand becomes the recommended solution in conversational search queries, bypassing traditional ad-heavy search pages."
+      },
+      {
+        question: "Do I still need SEO if I have GEO?",
+        answer: "Yes, traditional SEO and GEO are complementary. While SEO handles traditional keyword-based traffic, CodimAI's GEO focuses on intent-based AI discovery. A comprehensive strategy requires both to maintain visibility across the entire modern search landscape."
+      },
+      {
+        question: "How does CodimAI measure AI visibility?",
+        answer: "CodimAI uses proprietary tracking tools to monitor brand mentions, citation frequency, and sentiment across major AI platforms including ChatGPT, Claude, Perplexity, and Gemini. We provide data-driven reports on your brand's AI citation equity."
+      },
+      {
+        question: "Is GEO different for B2B vs B2C?",
+        answer: "Yes, CodimAI tailors GEO for B2B by focusing on complex entity building and whitepaper citations, whereas B2C GEO often emphasizes product attributes and consumer review sentiment analysis in AI training data sets."
+      }
+    ]
   }
 ];
 
-export const getIcon = (name: string, size = 24, className = "") => {
-  switch (name) {
-    case 'Zap': return <Zap size={size} className={className} />;
-    case 'Search': return <Search size={size} className={className} />;
-    case 'UserPlus': return <UserPlus size={size} className={className} />;
-    case 'Mail': return <Mail size={size} className={className} />;
-    case 'Calendar': return <Calendar size={size} className={className} />;
-    case 'FileText': return <FileText size={size} className={className} />;
-    case 'Kanban': return <Kanban size={size} className={className} />;
-    case 'CreditCard': return <CreditCard size={size} className={className} />;
-    case 'CheckCircle2': return <CheckCircle2 size={size} className={className} />;
-    case 'MessageSquare': return <MessageSquare size={size} className={className} />;
-    case 'TrendingUp': return <TrendingUp size={size} className={className} />;
-    case 'BarChart3': return <BarChart3 size={size} className={className} />;
-    case 'Share2': return <Share2 size={size} className={className} />;
-    default: return <Zap size={size} className={className} />;
+export const EDUCATIONAL_PAGES = [
+  {
+    title: "What is GEO? (Complete Guide)",
+    slug: "what-is-geo",
+    content: "Generative Engine Optimization (GEO) is the practice of optimizing content, entities, and digital presence for discovery in AI-powered answer engines like ChatGPT, Perplexity, and Google AI Overviews. CodimAI defines GEO as the intersection of technical SEO, knowledge graph engineering, and AI citation strategy."
+  },
+  {
+    title: "SEO vs GEO: Understanding the Difference",
+    slug: "seo-vs-geo",
+    content: "The primary difference lies in the destination. Traditional SEO optimizes for a list of blue links on a Search Engine Results Page (SERP). CodimAI's GEO methodology optimizes for the synthesized paragraph of text generated by an AI assistant."
   }
-};
+];
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: "blog-1",
+    title: "What is Generative Engine Optimization? A Complete Guide",
+    slug: "what-is-generative-engine-optimization",
+    date: "May 12, 2024",
+    category: "GEO Fundamentals",
+    excerpt: "Learn how CodimAI defines the future of search visibility in an AI-first world.",
+    content: "Generative Engine Optimization (GEO) is the new frontier of digital marketing. As search engines evolve into answer engines, the mechanics of visibility have shifted from keyword matching to entity relationships.",
+    sections: [
+      {
+        heading: "What defines a successful GEO strategy?",
+        content: "A successful GEO strategy by CodimAI involves three core pillars: Entity Authority, Citation Probability, and Contextual Relevance. We ensure your brand isn't just mentioned, but cited as an authoritative source."
+      },
+      {
+        heading: "How can brands audit their AI footprint?",
+        content: "CodimAI recommends a multi-platform audit approach. Test how ChatGPT, Perplexity, and Gemini respond to branded and unbranded queries related to your industry to identify 'citation gaps'."
+      }
+    ]
+  }
+];

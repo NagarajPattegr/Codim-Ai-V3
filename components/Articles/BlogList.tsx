@@ -52,30 +52,22 @@ const BlogList: React.FC<BlogListProps> = ({ posts, onReadMore, onBack }) => {
         </div>
       </section>
 
-      {/* Section Breaker */}
-      <div className="w-full py-4 flex items-center justify-center overflow-hidden relative bg-wispr-cream">
-        <div className="flex items-center gap-12 w-full max-w-7xl px-6 opacity-20">
-          <div className="flex-1 h-[1px] bg-wispr-dark"></div>
-          <div className="flex items-center gap-2 shrink-0">
-            <div className="h-4 w-1 bg-wispr-dark rounded-full"></div>
-            <div className="h-4 w-1 bg-wispr-dark rounded-full opacity-50"></div>
-          </div>
-          <div className="flex-1 h-[1px] bg-wispr-dark"></div>
-        </div>
-      </div>
+      {/* Blog Grid - DARK (Even) */}
+      <section className="py-12 md:py-20 px-6 bg-wispr-dark relative overflow-hidden">
+        {/* Subtle Background Elements */}
+        <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-wispr-purple/5 blur-[150px] rounded-full pointer-events-none"></div>
+        <div className="absolute inset-0 grid-bg-dark opacity-10"></div>
 
-      {/* Blog Grid */}
-      <section className="py-12 md:py-20 px-6 bg-wispr-cream">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* Stats Bar */}
-          <div className="flex items-center justify-between mb-16 pb-8 border-b border-wispr-dark/10">
+          <div className="flex items-center justify-between mb-16 pb-8 border-b border-white/10">
             <div className="flex items-center gap-4">
               <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
               <span className="font-brand text-[11px] font-black uppercase tracking-[0.3em] text-slate-400">
                 {posts.length} Article{posts.length !== 1 ? 's' : ''} Published
               </span>
             </div>
-            <span className="font-pike text-[10px] font-black uppercase tracking-widest text-slate-300">
+            <span className="font-pike text-[10px] font-black uppercase tracking-widest text-slate-500">
               Latest Insights
             </span>
           </div>
@@ -90,8 +82,8 @@ const BlogList: React.FC<BlogListProps> = ({ posts, onReadMore, onBack }) => {
           {/* Empty State */}
           {posts.length === 0 && (
             <div className="text-center py-32">
-              <p className="font-lander text-3xl text-slate-300 font-bold">No articles yet.</p>
-              <p className="font-sodo text-lg text-slate-400 mt-4">Check back soon for new content.</p>
+              <p className="font-lander text-3xl text-white/20 font-bold">No articles yet.</p>
+              <p className="font-sodo text-lg text-slate-500 mt-4">Check back soon for new content.</p>
             </div>
           )}
         </div>

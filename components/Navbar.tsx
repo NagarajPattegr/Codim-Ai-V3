@@ -19,7 +19,6 @@ const Navbar: React.FC<NavbarProps> = ({ onBookDemo }) => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Process', href: '/tech' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Article', href: '/article' },
   ];

@@ -1,39 +1,41 @@
 
-export interface ToolBenefit {
-  text: string;
+export interface FAQItem {
+  question: string;
+  answer: string;
 }
 
-export interface SalesTool {
+export interface ServiceDetail {
   id: string;
-  name: string;
   title: string;
-  hook: string;
-  benefits: string[];
-  iconName: string;
-  ctaText: string;
-  category: string;
+  slug: string;
+  description: string;
+  longDescription: string;
+  sections: {
+    heading: string;
+    content: string;
+    bullets?: string[];
+  }[];
+  faqs: FAQItem[];
 }
+
+export interface BlogSection {
+  type: 'heading' | 'subheading' | 'paragraph' | 'list' | 'quote' | 'image';
+  content?: string;
+  items?: string[];
+}
+
 export interface BlogPost {
   id: string;
-  slug: string;
   title: string;
+  slug: string;
   excerpt: string;
-  content: BlogSection[];
   author: {
     name: string;
     role: string;
-    avatar?: string;
   };
   publishedAt: string;
   readTime: string;
   category: string;
   tags: string[];
-  coverImage?: string;
-}
-
-export interface BlogSection {
-  type: 'paragraph' | 'heading' | 'subheading' | 'list' | 'quote' | 'image';
-  content?: string;
-  items?: string[];
-  level?: number;
+  content: BlogSection[];
 }

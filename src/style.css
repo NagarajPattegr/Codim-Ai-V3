@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+.swiper-pagination-bullet {
+    background: #8B5CF6 !important;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #8B5CF6 !important;
+    width: 24px !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease;
+}
+
+.perspective-xl {
+    perspective: 2000px;
+}
+
+.swiper-slide {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.2;
+    transform: scale(0.8);
+    filter: blur(4px);
+}
+
+.swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+    opacity: 0.6;
+    transform: scale(0.9);
+    filter: blur(1px);
+}
+
+.swiper-slide {
+    -webkit-box-reflect: bottom 10px linear-gradient(transparent, transparent, rgba(255, 255, 255, 0.1));
+}

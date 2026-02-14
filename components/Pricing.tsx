@@ -6,66 +6,48 @@ const PLANS = [
   {
     name: "Free",
     price: "0",
-    desc: "Get started. Explore the basics.",
-    subDesc: "Perfect for individuals or small teams who want to try the platform before committing.",
+    desc: "🆓 AI Visibility Audit",
+    subDesc: "👉 Goal: Show what’s missing and why competitors are winning.",
     features: [
-      "Limited access to core tools",
-      "Basic AI features only",
-      "Usage caps on credits & workflows",
-      "Limited automation runs",
-      "Community support"
-    ],
-    bestFor: [
-      "Early exploration",
-      "Testing workflows",
-      "Understanding platform capabilities"
+      "Google Business Profile quick review",
+      "Basic review & competitor analysis",
+      "3 AI visibility tests",
+      "Gap report + 5 quick fixes",
+      "15-min strategy call"
     ],
     cta: "Get Started Free"
   },
   {
-    name: "Pro Platform",
+    name: "Growth",
     price: "24,000",
-    desc: "All tools. One powerful engine.",
-    subDesc: "Designed for growing teams and companies that want full access without complexity.",
+    desc: "🚀 AI Recommendation Growth",
+    subDesc: "👉 Goal: Get your brand mentioned in AI answers consistently.",
     features: [
-      "Access to all 13 AI tools",
-      "Full platform functionality",
-      "Advanced workflows & automations",
-      "Centralized dashboard",
-      "Priority platform support"
+      "Full Google Business Profile optimization",
+      "Monthly review growth system",
+      "Directory & citation building",
+      "4 GEO-optimized blogs/month",
+      "FAQ + schema setup",
+      "AI visibility tracking (ChatGPT, Google AI, etc.)",
+      "Monthly report + strategy call"
     ],
-    additionalCharges: [
-      "External API usage (OpenAI, Claude, etc.)",
-      "Third-party platform costs (if applicable)"
-    ],
-    bestFor: [
-      "Startups",
-      "Agencies",
-      "Product & growth teams",
-      "Companies scaling AI usage"
-    ],
-    cta: "Activate Platform",
+    cta: "Start Growth Plan",
     primary: true
   },
   {
     name: "Custom",
     price: "Custom Pricing",
-    desc: "Built for scale. Tailored for you.",
-    subDesc: "For enterprises and high-volume teams with advanced requirements.",
+    desc: "💎 AI Market Leader",
+    subDesc: "👉 Goal: Make your brand the default AI recommendation in your industry.",
     features: [
-      "Everything in Pro",
-      "Custom workflows & integrations",
-      "Dedicated setup & onboarding",
-      "Custom API orchestration",
-      "Enterprise-grade security & controls",
-      "Dedicated account/tech support"
+      "Multi-location optimization",
+      "8 authority blogs/month",
+      "Digital PR & press releases",
+      "High-authority brand mentions",
+      "Competitive AI share-of-voice tracking",
+      "Executive reporting"
     ],
-    bestFor: [
-      "Enterprises",
-      "High-volume AI usage",
-      "Custom infrastructure needs"
-    ],
-    cta: "Let's Talk"
+    cta: "Contact Sales"
   }
 ];
 
@@ -86,8 +68,8 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
         <div className="text-center mb-40 reveal-advanced active">
           <span className="font-pike font-black uppercase text-[12px] mb-8 block tracking-[0.5em] text-wispr-purple bg-wispr-purple/10 w-fit mx-auto px-6 py-2 rounded-full">INVESTMENT ARCHITECTURE</span>
           <h2 className={`font-lander text-7xl md:text-[11rem] font-bold leading-[0.8] tracking-tighter ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'}`}>
-            One fee.<br />
-            <span className="text-slate-400">One engine.</span>
+            Growth Plans.<br />
+            <span className="text-slate-400">Scale with AI.</span>
           </h2>
         </div>
 
@@ -108,7 +90,7 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
                 <div className={`font-pike absolute -top-0 left-1/2 -translate-x-1/2 text-[11px] font-black px-8 py-3 rounded-b-3xl uppercase tracking-[0.3em] shadow-xl ${isDark ? 'bg-wispr-purple text-wispr-dark' : 'bg-wispr-dark text-white'
                   }`}>
                   <div className="flex items-center gap-2">
-                    <Zap size={12} fill="currentColor" /> MOST EFFICIENT
+                    <Zap size={12} fill="currentColor" /> MOST POPULAR
                   </div>
                 </div>
               )}
@@ -116,7 +98,7 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
               <div className="mb-10 pt-4">
                 <h3 className={`text-4xl font-bold mb-4 tracking-tighter ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'} drop-shadow-sm`}>{plan.name}</h3>
                 <p className={`text-lg font-bold opacity-100 mb-2 leading-tight`}>{plan.desc}</p>
-                <p className={`text-sm opacity-70 leading-relaxed`}>{plan.subDesc}</p>
+                <p className={`text-sm opacity-70 leading-relaxed font-medium`}>{plan.subDesc}</p>
               </div>
 
               <div className="flex flex-col gap-1 mb-12 group-hover:scale-105 transition-transform duration-700 origin-left">
@@ -126,9 +108,6 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
                   </span>
                   {plan.price !== "Custom Pricing" && <span className={`font-black text-xl opacity-40`}>/mo</span>}
                 </div>
-                {plan.name === "Pro Platform" && (
-                  <span className="text-xs font-bold opacity-60 uppercase tracking-widest">(Platform fee only)</span>
-                )}
               </div>
 
               <div className="space-y-12 mb-16 flex-1">
@@ -144,34 +123,6 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
                         </div>
                         <span className={`text-base font-bold transition-all ${isDark ? 'text-white/80 group-hover/feature:text-white' : 'text-slate-700 group-hover/feature:text-wispr-dark'}`}>{f}</span>
                       </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Additional Charges Section */}
-                {plan.additionalCharges && (
-                  <div>
-                    <h4 className="text-[11px] font-pike font-black uppercase tracking-[0.2em] mb-6 opacity-60">Additional charges</h4>
-                    <div className="space-y-4">
-                      {plan.additionalCharges.map((c, ci) => (
-                        <div key={ci} className="flex items-start gap-4 transition-transform duration-500 hover:translate-x-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-wispr-purple mt-2 shrink-0 opacity-60" />
-                          <span className={`text-sm font-bold ${isDark ? 'text-white/70' : 'text-slate-600'}`}>{c}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Best For Section */}
-                <div>
-                  <h4 className="text-[11px] font-pike font-black uppercase tracking-[0.2em] mb-6 opacity-60">Best for</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {plan.bestFor.map((b, bi) => (
-                      <span key={bi} className={`text-[10px] font-bold px-3 py-1.5 rounded-lg border uppercase tracking-wider ${isDark ? 'border-white/20 bg-white/10 text-white/70' : 'border-wispr-dark/20 bg-wispr-cream text-wispr-dark/60'
-                        }`}>
-                        {b}
-                      </span>
                     ))}
                   </div>
                 </div>
@@ -200,14 +151,14 @@ const Pricing: React.FC<PricingProps> = ({ theme = 'light', onBookDemo }) => {
 
         <div className="mt-40 p-12 bg-white/5 border border-white/10 rounded-[3.5rem] flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left reveal-advanced active">
           <div>
-            <h4 className={`text-2xl font-bold mb-2 ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'}`}>Need a white-glove migration?</h4>
-            <p className="opacity-70 font-bold italic">Our engineering team can handle the total stack transfer in 72 hours.</p>
+            <h4 className={`text-2xl font-bold mb-2 ${isDark ? 'text-wispr-cream' : 'text-wispr-dark'}`}>Need a custom solution?</h4>
+            <p className="opacity-70 font-bold italic">Our experts can tailor a strategy specific to your business needs.</p>
           </div>
           <button
             onClick={onBookDemo}
             className={`px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest border transition-all hover:scale-105 ${isDark ? 'border-white/20 text-white hover:bg-white hover:text-wispr-dark' : 'border-wispr-dark/20 text-wispr-dark hover:bg-wispr-dark hover:text-white'
               }`}>
-            Contact Engineering
+            Talk to Experts
           </button>
         </div>
       </div>
