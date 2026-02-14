@@ -1,5 +1,3 @@
-import React from 'react';
-import { Search, Brain, Share2, Target, Zap, ShieldCheck } from 'lucide-react';
 import type { ServiceDetail, BlogPost } from './types';
 
 export const COMPANY_NAME = "CodimAI";
@@ -88,17 +86,34 @@ export const BLOG_POSTS: BlogPost[] = [
     id: "blog-1",
     title: "What is Generative Engine Optimization? A Complete Guide",
     slug: "what-is-generative-engine-optimization",
-    date: "May 12, 2024",
+    publishedAt: "May 12, 2024",
     category: "GEO Fundamentals",
     excerpt: "Learn how CodimAI defines the future of search visibility in an AI-first world.",
-    content: "Generative Engine Optimization (GEO) is the new frontier of digital marketing. As search engines evolve into answer engines, the mechanics of visibility have shifted from keyword matching to entity relationships.",
-    sections: [
+    author: {
+      name: "CodimAI Team",
+      role: "Strategic GEO Division"
+    },
+    readTime: "5 min",
+    tags: ["GEO", "AI Search", "Digital Marketing"],
+    content: [
       {
-        heading: "What defines a successful GEO strategy?",
+        type: 'paragraph',
+        content: "Generative Engine Optimization (GEO) is the new frontier of digital marketing. As search engines evolve into answer engines, the mechanics of visibility have shifted from keyword matching to entity relationships."
+      },
+      {
+        type: 'heading',
+        content: "What defines a successful GEO strategy?"
+      },
+      {
+        type: 'paragraph',
         content: "A successful GEO strategy by CodimAI involves three core pillars: Entity Authority, Citation Probability, and Contextual Relevance. We ensure your brand isn't just mentioned, but cited as an authoritative source."
       },
       {
-        heading: "How can brands audit their AI footprint?",
+        type: 'heading',
+        content: "How can brands audit their AI footprint?"
+      },
+      {
+        type: 'paragraph',
         content: "CodimAI recommends a multi-platform audit approach. Test how ChatGPT, Perplexity, and Gemini respond to branded and unbranded queries related to your industry to identify 'citation gaps'."
       }
     ]

@@ -7,7 +7,6 @@ import {
     ShieldCheck,
     Zap,
     ArrowRight,
-    Quote,
     Globe,
     Cpu,
     TrendingUp,
@@ -27,8 +26,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 
 // Swiper styles
+// @ts-ignore
 import 'swiper/css';
+// @ts-ignore
 import 'swiper/css/effect-coverflow';
+// @ts-ignore
 import 'swiper/css/pagination';
 
 const StatCard: React.FC<{ val: string; label: string; delay: number; Icon: LucideIcon }> = ({ val, label, delay, Icon }) => {
