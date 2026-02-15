@@ -390,8 +390,8 @@ const Home: React.FC = () => {
                 </section>
 
                 {/* Final CTA - CREAM */}
-                <section className="py-24 md:py-48 px-4 md:px-6 bg-wispr-cream">
-                    <div className="max-w-5xl mx-auto bg-white p-10 md:p-32 rounded-[2.5rem] md:rounded-[5rem] border-4 border-wispr-dark text-center overflow-hidden relative reveal-advanced active shadow-2xl">
+                <section className="py-12 md:py-20 px-4 md:px-6 bg-wispr-cream">
+                    <div className="max-w-5xl mx-auto bg-white p-10 md:p-32 rounded-[2.5rem] md:rounded-[5rem] text-center overflow-hidden relative reveal-advanced active shadow-2xl">
                         <div className="absolute -top-32 -left-32 w-96 h-96 bg-purple-800/10 blur-[150px] rounded-full"></div>
                         <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-600/10 blur-[150px] rounded-full"></div>
 
