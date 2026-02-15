@@ -28,7 +28,7 @@
             wispr: {
               cream: '#fbfaf2',
               dark: '#161616',
-              purple: '#8B5CF6',
+              purple: '#6D28D9',
               accent: '#0e312a',
             }
           },
@@ -37,8 +37,8 @@
             'pulse-glow': 'pulse-glow 6s ease-in-out infinite',
             'float-slow': 'float-slow 8s ease-in-out infinite',
             'float': 'float 6s ease-in-out infinite',
-            'text-reveal-lux': 'text-reveal-lux 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards',
             'fade-in-up': 'fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'gradient-move': 'gradient-move 8s ease infinite',
           },
           keyframes: {
             shimmer: {
@@ -63,7 +63,11 @@
             },
             'fade-in-up': {
               '0%': { transform: 'translateY(30px)', opacity: '0' },
-              '110%': { transform: 'translateY(0)', opacity: '1' }
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            },
+            'gradient-move': {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' }
             }
           }
         }
@@ -186,9 +190,9 @@
       height: 60px;
       top: -30px;
       left: -30px;
-      background: rgba(139, 92, 246, 0.3);
+      background: rgba(109, 40, 217, 0.3);
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(139, 92, 246, 0.4);
+      border: 1px solid rgba(109, 40, 217, 0.4);
       mix-blend-mode: normal;
     }
 
@@ -206,7 +210,7 @@
     }
 
     .purple-gradient-text {
-      background: linear-gradient(to right, #60A5FA, #8B5CF6, #D8B4FE);
+      background: linear-gradient(to right, #3B82F6, #6D28D9, #A78BFA);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -231,11 +235,11 @@
     }
 
     .accent-gradient {
-      background: linear-gradient(135deg, #8B5CF6 0%, #C084FC 100%);
+      background: linear-gradient(135deg, #6D28D9 0%, #8B5CF6 100%);
     }
 
     .text-gradient {
-      background: linear-gradient(135deg, #8B5CF6 0%, #C084FC 100%);
+      background: linear-gradient(135deg, #6D28D9 0%, #8B5CF6 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -271,8 +275,10 @@
       animation: marquee 40s linear infinite;
     }
 
-    .animate-marquee:hover {
-      animation-play-state: paused;
+    @media (hover: hover) {
+      .animate-marquee:hover {
+        animation-play-state: paused;
+      }
     }
   </style>
 
@@ -286,8 +292,8 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/Codim-Ai-V3/assets/index-Cz0Tcuon.js"></script>
-  <link rel="stylesheet" crossorigin href="/Codim-Ai-V3/assets/index-BQIpbjDi.css">
+  <script type="module" crossorigin src="/Codim-Ai-V3/assets/index-BPmBoko2.js"></script>
+  <link rel="stylesheet" crossorigin href="/Codim-Ai-V3/assets/index-C_2Gt2Xo.css">
 </head>
 
 <body class="antialiased overflow-x-hidden font-sodo">
