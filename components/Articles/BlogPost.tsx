@@ -47,7 +47,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
           <ul key={index} className="space-y-4 mb-8 ml-2">
             {section.items?.map((item: string, i: number) => (
               <li key={i} className="flex items-start gap-4">
-                <div className="w-2.5 h-2.5 rounded-full bg-wispr-purple mt-2.5 shrink-0 shadow-[0_0_12px_rgba(139,92,246,0.5)]"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-wispr-purple mt-2.5 shrink-0 shadow-[0_0_12px_rgba(109,40,217,0.5)]"></div>
                 <span className="font-sodo text-lg text-slate-400 leading-relaxed">{item}</span>
               </li>
             ))}
@@ -210,7 +210,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, onBack, onBackToList
               </p>
               <button
                 onClick={onBack}
-                className="inline-flex items-center gap-4 px-10 py-5 bg-wispr-purple text-wispr-dark rounded-2xl font-brand text-[12px] font-black uppercase tracking-[0.2em] hover:scale-105 transition-all active:scale-95 shadow-2xl shadow-purple-500/20 group"
+                className="inline-flex items-center gap-4 px-10 py-5 bg-wispr-purple text-wispr-dark rounded-2xl font-brand text-[12px] font-black uppercase tracking-[0.2em] hover:scale-105 transition-all active:scale-95 shadow-2xl shadow-purple-700/20 group"
               >
                 Explore Our Solutions
                 <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />

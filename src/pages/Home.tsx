@@ -66,7 +66,7 @@ const StatCard: React.FC<{ val: string; label: string; delay: number; Icon: Luci
     return (
         <div
             ref={cardRef}
-            className={`group relative flex items-center gap-8 py-12 px-14 border transition-all duration-1000 mx-10 shrink-0 overflow-hidden min-w-[460px] rounded-[2.5rem]
+            className={`group relative flex items-center gap-4 md:gap-8 py-6 px-8 md:py-12 md:px-14 border transition-all duration-1000 mx-4 md:mx-10 shrink-0 overflow-hidden min-w-[280px] md:min-w-[460px] rounded-[1.5rem] md:rounded-[2.5rem]
                 ${isCentered
                     ? 'bg-white border-wispr-purple/40 scale-105 z-20 shadow-[0_30px_70px_-20px_rgba(139,92,246,0.15)]'
                     : 'bg-white border-wispr-dark/5 scale-100 z-10 shadow-sm'}
@@ -75,19 +75,19 @@ const StatCard: React.FC<{ val: string; label: string; delay: number; Icon: Luci
             {/* Animated Edge Border */}
             <div className={`absolute top-0 left-0 h-[2px] bg-gradient-to-r from-transparent via-wispr-purple to-transparent transition-all duration-1000 ${isVisible ? 'w-full' : 'w-0'}`}></div>
 
-            <div className={`relative z-10 p-6 rounded-2xl transition-all duration-500 
+            <div className={`relative z-10 p-4 md:p-6 rounded-xl md:rounded-2xl transition-all duration-500 
                 ${isCentered ? 'bg-wispr-purple/10 text-wispr-purple scale-110' : 'bg-wispr-purple/5 text-wispr-purple/40'}
             `}>
-                <Icon size={48} strokeWidth={1} />
+                <Icon className="w-8 h-8 md:w-12 md:h-12" strokeWidth={1} />
             </div>
 
             <div className="relative z-10 flex flex-col">
-                <div className={`text-6xl font-black mb-1 tracking-tighter transition-colors duration-500
+                <div className={`text-4xl md:text-6xl font-black mb-1 tracking-tighter transition-colors duration-500
                     ${isCentered ? 'text-wispr-dark' : 'text-wispr-dark/40'}
                 `}>
                     {val}
                 </div>
-                <div className={`text-[10px] uppercase tracking-[0.4em] font-brand font-black leading-tight transition-colors duration-500
+                <div className={`text-[8px] md:text-[10px] uppercase tracking-[0.4em] font-brand font-black leading-tight transition-colors duration-500
                     ${isCentered ? 'text-wispr-purple' : 'text-slate-400'}
                 `}>
                     {label}
@@ -141,11 +141,11 @@ const Home: React.FC = () => {
 
             <main>
                 {/* Hero Section - PREMIUM ENHANCED */}
-                <section className="relative min-h-[75vh] flex items-center pt-4 pb-0 px-6 overflow-hidden bg-wispr-cream">
+                <section className="relative min-h-[75vh] flex items-center pt-24 md:pt-4 pb-0 px-6 overflow-hidden bg-wispr-cream">
                     {/* Background Refined Gradients & Mesh */}
                     <div className="absolute inset-0 overflow-hidden pointer-events-none">
                         <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-wispr-purple/15 blur-[120px] rounded-full animate-float opacity-70"></div>
-                        <div className="absolute bottom-[-10%] right-[-5%] w-[45%] h-[45%] bg-purple-400/10 blur-[100px] rounded-full animate-float-slow opacity-50" style={{ animationDelay: '-3s' }}></div>
+                        <div className="absolute bottom-[-10%] right-[-5%] w-[45%] h-[45%] bg-purple-600/10 blur-[100px] rounded-full animate-float-slow opacity-50" style={{ animationDelay: '-3s' }}></div>
                         <div className="absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-blue-400/10 blur-[120px] rounded-full animate-float opacity-40" style={{ animationDelay: '-5s' }}></div>
 
                         {/* Subtle Grid Interaction */}
@@ -154,12 +154,12 @@ const Home: React.FC = () => {
 
                     <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
                         {/* New Premium Badge */}
-                        <div className="inline-flex items-center space-x-3 px-6 py-2 glass border border-wispr-purple/20 rounded-full mb-8 reveal-advanced active group cursor-default shadow-sm transition-all hover:border-wispr-purple/40">
-                            <div className="relative">
+                        <div className="inline-flex items-center space-x-3 px-6 py-2 glass border border-wispr-purple/20 rounded-full mb-8 reveal-advanced active group cursor-default shadow-sm transition-all hover:border-wispr-purple/40  bg-black">
+                            <div className="relative ">
                                 <span className="absolute inset-0 bg-wispr-purple/30 rounded-full blur-sm group-hover:blur-md transition-all"></span>
                                 <span className="relative block w-2 h-2 bg-wispr-purple rounded-full animate-pulse"></span>
                             </div>
-                            <span className="text-[10px] font-brand font-black uppercase tracking-[0.5em] text-wispr-purple/70 group-hover:text-wispr-purple transition-colors">
+                            <span className="text-[15px] font-brand font-black uppercase tracking-[0.5em] text-wispr-purple/70 group-hover:text-wispr-purple transition-colors ">
                                 Defining AI Visibility
                             </span>
                         </div>
@@ -222,7 +222,7 @@ const Home: React.FC = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
                             <div className="reveal-advanced active">
                                 <h2 className="font-lander text-4xl md:text-6xl font-bold text-white mb-10 leading-[0.95] tracking-tighter">
-                                    Traditional SEO doesn't guarantee visibility in <span className="text-purple-400">AI answers</span>—{COMPANY_NAME} bridges that gap.
+                                    Traditional SEO doesn't guarantee visibility in <span className="text-purple-600">AI answers</span>—{COMPANY_NAME} bridges that gap.
                                 </h2>
                                 <p className="font-sodo text-lg text-slate-400 mb-12 leading-relaxed">
                                     As Large Language Models (LLMs) redefine search behavior, your existing rankings might not translate into AI citations. {COMPANY_NAME} focuses on Entity Engineering and Generative Engine Optimization to ensure you are the answer, not just a result.
@@ -235,7 +235,7 @@ const Home: React.FC = () => {
                                         "Real-time visibility tracking"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-center space-x-4 text-slate-300 font-brand font-black text-sm uppercase tracking-wider">
-                                            <CheckCircle2 size={22} className="text-purple-400 shrink-0" />
+                                            <CheckCircle2 size={22} className="text-purple-600 shrink-0" />
                                             <span>{item}</span>
                                         </li>
                                     ))}
@@ -273,8 +273,8 @@ const Home: React.FC = () => {
                                         { icon: Zap, title: "Fast Results", desc: "Strategic shifts visible in 60-90 days." }
                                     ].map((feature, i) => (
                                         <SwiperSlide key={i} className="max-w-[320px] md:max-w-[400px] px-4">
-                                            <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/5 hover:border-purple-500/30 transition-all group h-[400px] flex flex-col items-center text-center justify-center backdrop-blur-sm">
-                                                <div className="w-16 h-16 accent-gradient rounded-2xl flex items-center justify-center text-white mb-8 group-hover:rotate-12 transition-transform shadow-xl shadow-purple-500/10">
+                                            <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/5 hover:border-purple-700/30 transition-all group h-[400px] flex flex-col items-center text-center justify-center backdrop-blur-sm">
+                                                <div className="w-16 h-16 accent-gradient rounded-2xl flex items-center justify-center text-white mb-8 group-hover:rotate-12 transition-transform shadow-xl shadow-purple-700/10">
                                                     <feature.icon size={32} />
                                                 </div>
                                                 <h3 className="text-2xl font-brand font-black uppercase tracking-tight text-white mb-4">{feature.title}</h3>
@@ -288,24 +288,56 @@ const Home: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Services Overview - CREAM (Odd) */}
-                <section className="py-40 px-6 bg-wispr-cream">
-                    <div className="max-w-7xl mx-auto">
+                {/* Services Overview - PREMIUM ENHANCED */}
+                <section className="py-40 px-6 bg-wispr-cream relative overflow-hidden">
+                    {/* Background Decorative Elements */}
+                    <div className="absolute inset-0 pointer-events-none">
+                        <div className="absolute top-1/4 -right-20 w-[40%] h-[40%] bg-blue-400/5 blur-[120px] rounded-full animate-float opacity-50"></div>
+                        <div className="absolute bottom-1/4 -left-20 w-[40%] h-[40%] bg-wispr-purple/10 blur-[120px] rounded-full animate-float-slow opacity-60"></div>
+                        <div className="absolute inset-0 grid-bg-light opacity-[0.05]"></div>
+                    </div>
+
+                    <div className="max-w-7xl mx-auto relative z-10">
                         <div className="text-center mb-24 reveal-advanced active">
-                            <h2 className="font-lander text-4xl md:text-7xl font-bold text-wispr-dark mb-8 tracking-tighter">Expert {COMPANY_NAME} Services</h2>
+                            <div className="inline-flex items-center space-x-3 px-5 py-2 rounded-full bg-wispr-dark text-wispr-cream mb-8 shadow-xl">
+                                <span className="w-1.5 h-1.5 bg-wispr-purple rounded-full animate-pulse"></span>
+                                <span className="text-[10px] font-brand font-black uppercase tracking-[0.4em]">Proprietary Framework</span>
+                            </div>
+                            <h2 className="font-lander text-4xl md:text-7xl font-bold text-wispr-dark mb-8 tracking-tighter">
+                                Expert <span className="text-wispr-purple italic">{COMPANY_NAME}</span> Services
+                            </h2>
                             <p className="font-sodo text-slate-600 max-w-2xl mx-auto text-xl leading-relaxed">
                                 We specialize in the technical methodologies required for visibility in the next generation of generative search engines.
                             </p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
                             {SERVICES.map((service, i) => (
-                                <div key={i} className="bg-white p-16 rounded-[3.5rem] border border-wispr-dark/5 flex flex-col hover:border-wispr-purple/20 transition-all duration-500 hover:-translate-y-2 group reveal-advanced active shadow-sm hover:shadow-2xl" style={{ transitionDelay: `${i * 100}ms` }}>
-                                    <h3 className="font-lander text-3xl md:text-4xl font-bold text-wispr-dark mb-8 leading-tight tracking-tight">{service.title}</h3>
-                                    <p className="font-sodo text-slate-600 text-lg mb-12 leading-relaxed flex-grow">{service.description}</p>
-                                    <Link to={`/${service.slug}`} className="group inline-flex items-center space-x-3 text-wispr-purple font-brand font-black text-[13px] uppercase tracking-[0.3em] w-fit">
-                                        <span>Learn More</span>
-                                        <ArrowRight size={20} className="group-hover:translate-x-3 transition-transform" />
-                                    </Link>
+                                <div key={i} className="bg-white p-12 md:p-16 rounded-[3.5rem] border border-wispr-dark/5 flex flex-col hover:border-wispr-purple/40 transition-all duration-700 hover:-translate-y-3 group reveal-advanced shadow-[0_20px_50px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_-20px_rgba(139,92,246,0.15)] relative overflow-hidden" style={{ transitionDelay: `${i * 150}ms` }}>
+                                    {/* Number Indicator */}
+                                    <div className="absolute top-12 right-12 text-wispr-dark/5 font-lander text-8xl md:text-9xl font-black select-none group-hover:text-wispr-purple/10 transition-colors duration-700 pointer-events-none">
+                                        0{i + 1}
+                                    </div>
+
+                                    <div className="relative z-10">
+                                        <h3 className="font-lander text-3xl md:text-5xl font-bold text-wispr-dark mb-8 leading-[1.1] tracking-tight group-hover:text-wispr-purple transition-colors duration-500">
+                                            {service.title}
+                                        </h3>
+                                        <p className="font-sodo text-slate-600 text-lg md:text-xl mb-12 leading-relaxed flex-grow">
+                                            {service.description}
+                                        </p>
+                                        <Link to={`/${service.slug}`} className="group/btn inline-flex items-center space-x-4 text-wispr-purple font-brand font-black text-[13px] uppercase tracking-[0.3em] w-fit">
+                                            <span className="relative">
+                                                Learn More
+                                                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-wispr-purple transition-all duration-500 group-hover/btn:w-full"></span>
+                                            </span>
+                                            <div className="w-10 h-10 rounded-full border border-wispr-purple/20 flex items-center justify-center group-hover/btn:bg-wispr-purple group-hover/btn:text-white transition-all duration-500">
+                                                <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                                            </div>
+                                        </Link>
+                                    </div>
+
+                                    {/* Accent Border Bottom */}
+                                    <div className="absolute bottom-0 left-0 h-2 bg-gradient-to-r from-wispr-purple via-wispr-purple/50 to-transparent w-0 group-hover:w-full transition-all duration-1000"></div>
                                 </div>
                             ))}
                         </div>
@@ -317,7 +349,7 @@ const Home: React.FC = () => {
                     {/* Background Ambient Glows - Enhanced */}
                     <div className="absolute inset-0 pointer-events-none">
                         <div className="absolute top-[-10%] left-[-5%] w-[60%] h-[60%] bg-wispr-purple/10 blur-[150px] rounded-full animate-float opacity-40"></div>
-                        <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] bg-purple-400/10 blur-[130px] rounded-full animate-float-slow opacity-30"></div>
+                        <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] bg-purple-600/10 blur-[130px] rounded-full animate-float-slow opacity-30"></div>
 
                         {/* Subtle Pattern Overlay */}
                         <div className="absolute inset-0 grid-bg-dark opacity-10"></div>
@@ -339,9 +371,9 @@ const Home: React.FC = () => {
                             <div className="absolute -top-16 -left-12 md:-left-20 text-wispr-purple/15 font-serif text-[280px] leading-none select-none pointer-events-none">“</div>
                             <div className="absolute -bottom-60 -right-12 md:-right-20 text-wispr-purple/15 font-serif text-[280px] leading-none select-none pointer-events-none">”</div>
 
-                            <div className="bg-gradient-to-br from-indigo-950/40 via-purple-950/60 to-wispr-purple/30 backdrop-blur-2xl p-14 md:p-28 rounded-[5rem] border border-white/10 relative overflow-hidden reveal-advanced active shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] group-hover:border-wispr-purple/40 transition-all duration-700">
+                            <div className="bg-gradient-to-br from-indigo-950/40 via-purple-950/60 to-wispr-purple/30 backdrop-blur-2xl p-14 md:p-28 rounded-[5rem] border border-white/10 relative overflow-hidden reveal-advanced active shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] group-hover:border-wispr-purple/40 transition-all duration-700 animate-gradient-move bg-[length:200%_200%]">
                                 {/* Animated Inner Glow */}
-                                <div className="absolute inset-0 bg-gradient-to-tr from-wispr-purple/10 via-transparent to-purple-400/5 opacity-50"></div>
+                                <div className="absolute inset-0 bg-gradient-to-tr from-wispr-purple/10 via-transparent to-purple-600/5 opacity-50"></div>
 
                                 <blockquote className="relative z-10 text-center">
                                     <p className="font-lander text-4xl md:text-6xl font-medium text-white mb-20 leading-[1.05] tracking-tight italic">
@@ -359,9 +391,9 @@ const Home: React.FC = () => {
 
                 {/* Final CTA - CREAM */}
                 <section className="py-48 px-6 bg-wispr-cream">
-                    <div className="max-w-5xl mx-auto bg-white p-20 md:p-32 rounded-[5rem] border border-wispr-dark/10 text-center overflow-hidden relative reveal-advanced active shadow-2xl">
-                        <div className="absolute -top-32 -left-32 w-96 h-96 bg-purple-600/10 blur-[150px] rounded-full"></div>
-                        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-400/10 blur-[150px] rounded-full"></div>
+                    <div className="max-w-5xl mx-auto bg-white p-20 md:p-32 rounded-[5rem] border-4 border-wispr-dark text-center overflow-hidden relative reveal-advanced active shadow-2xl">
+                        <div className="absolute -top-32 -left-32 w-96 h-96 bg-purple-800/10 blur-[150px] rounded-full"></div>
+                        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-purple-600/10 blur-[150px] rounded-full"></div>
 
                         <h2 className="font-lander text-4xl md:text-8xl font-bold text-wispr-dark mb-10 relative z-10 leading-[0.9] tracking-tighter">
                             Stop being <span className="text-gradient">invisible</span> to AI search engines.
@@ -370,10 +402,10 @@ const Home: React.FC = () => {
                             Join 500+ brands that have secured their place in the future of conversational search with {COMPANY_NAME}.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-10 relative z-10">
-                            <Link to="/contact" className="px-12 py-6 accent-gradient rounded-2xl text-white font-brand font-black text-sm uppercase tracking-widest hover:scale-110 hover:rotate-[-2deg] transition-all shadow-2xl shadow-purple-500/30">
+                            <Link to="/contact" className="px-12 py-6 accent-gradient rounded-2xl text-white font-brand font-black text-sm uppercase tracking-widest hover:scale-110 hover:rotate-[-2deg] transition-all shadow-2xl shadow-purple-700/30">
                                 Schedule Your Free Audit
                             </Link>
-                            <Link to="/education" className="text-wispr-dark font-brand font-black text-sm uppercase tracking-widest hover:text-wispr-purple transition-all flex items-center space-x-4 group">
+                            <Link to="/education" className="px-12 py-6 border-2 border-wispr-dark/20 rounded-4xl text-wispr-dark font-brand font-black text-sm uppercase tracking-widest hover:bg-wispr-dark hover:text-white hover:border-wispr-dark transition-all flex items-center space-x-4 group shadow-sm">
                                 <span>Read Our GEO Guide</span>
                                 <ArrowRight size={22} className="group-hover:translate-x-3 transition-transform" />
                             </Link>

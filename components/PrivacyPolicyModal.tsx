@@ -230,7 +230,7 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ open, onClose }
                                             <li>Data portability</li>
                                             <li>Withdraw consent</li>
                                         </ul>
-                                        <div className="p-6 bg-purple-50 rounded-[2rem] border border-purple-100 text-wispr-dark font-bold text-center">
+                                        <div className="p-6 bg-purple-100 rounded-[2rem] border border-purple-200 text-wispr-dark font-bold text-center">
                                             Contact <a href="mailto:privacy@codimai.com" className="text-wispr-purple underline underline-offset-4 break-all">privacy@codimai.com</a> to exercise your rights.
                                         </div>
                                     </div>

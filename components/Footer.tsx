@@ -43,7 +43,7 @@ const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
                         <h4 className="font-brand font-black text-[13px] uppercase tracking-[0.3em] text-wispr-purple/80">Navigation</h4>
                         <ul className="space-y-4">
                             <li><Link to="/" className="font-sodo font-bold text-slate-400 hover:text-white transition-colors text-base">Home</Link></li>
-                            <li><Link to="/tech" className="font-sodo font-bold text-slate-400 hover:text-white transition-colors text-base">Our Tech</Link></li>
+                            <li><Link to="/geo-services" className="font-sodo font-bold text-slate-400 hover:text-white transition-colors text-base">GEO</Link></li>
                             <li><Link to="/pricing" className="font-sodo font-bold text-slate-400 hover:text-white transition-colors text-base">Pricing</Link></li>
                             <li><Link to="/article" className="font-sodo font-bold text-slate-400 hover:text-white transition-colors text-base">Article</Link></li>
 
